@@ -6,7 +6,7 @@
 /*   By: nmeunier <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/10 16:14:30 by nmeunier          #+#    #+#             */
-/*   Updated: 2026/03/12 18:10:13 by nmeunier         ###   ########.fr       */
+/*   Updated: 2026/03/12 19:09:26 by nmeunier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,6 @@ int	main(int ac, char **av)
 		return (0);
 	if (!init_mutex(data, &mutex) || !init_philo(data, &philo))
 		return (0);
-	data->start = get_time();
 	free_all(data, mutex, philo);
 	return (0);
 }
