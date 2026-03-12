@@ -1,34 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   time.c                                             :+:      :+:    :+:   */
+/*   free.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nmeunier <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/03/10 17:00:00 by nmeunier          #+#    #+#             */
-/*   Updated: 2026/03/12 17:15:34 by nmeunier         ###   ########.fr       */
+/*   Created: 2026/03/12 17:18:30 by nmeunier          #+#    #+#             */
+/*   Updated: 2026/03/12 18:05:21 by nmeunier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/philo.h"
 
-long	get_time(void)
+void	free_all(t_data *data, pthread_mutex_t *mutex, t_philo *philo)
 {
-	struct timeval	tv;
-	int				error;
+	int	i;
 
-	error = gettimeofday(&tv, NULL);
-	if (error)
-		return (0);
-	return (tv.tv_sec * 1000 + tv.tv_usec / 1000);
-}
-
-void	ft_usleep(t_data data, int time)
-{
-	int	max;
-
-	max = get_time() + time;
-	while ((max > get_time()) && !data.stop)
-		if (!usleep(200))
-			return ;
+	i = -1;
+	if (mutex && data)
+	{
+		while (++i < data->number_of_philosophers)
+			pthread_mutex_destroy(&mutex[i]);
+		free(mutex);
+	}
+	if (data)
+		free(data);
+	if (philo)
+		free(philo);
 }
