@@ -6,7 +6,7 @@
 /*   By: nmeunier <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/10 17:00:00 by nmeunier          #+#    #+#             */
-/*   Updated: 2026/03/12 17:15:34 by nmeunier         ###   ########.fr       */
+/*   Updated: 2026/03/13 12:27:12 by nmeunier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ long	get_time(void)
 	error = gettimeofday(&tv, NULL);
 	if (error)
 		return (0);
-	return (tv.tv_sec * 1000 + tv.tv_usec / 1000);
+	return (tv.tv_sec * 1000L + tv.tv_usec / 1000L);
 }
 
 void	ft_usleep(t_data data, int time)

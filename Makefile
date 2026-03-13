@@ -6,13 +6,14 @@
 #    By: nmeunier <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2026/02/05 11:19:10 by nmeunier          #+#    #+#              #
-#    Updated: 2026/03/12 17:35:58 by nmeunier         ###   ########.fr        #
+#    Updated: 2026/03/13 12:28:42 by nmeunier         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 LIBFT	= libft/ft_putstr_fd.c libft/ft_atoi.c
 
-SRCS = $(LIBFT) src/main.c src/parser.c src/time.c src/free.c
+SRCS = $(LIBFT) src/main.c src/init.c src/time.c src/free.c \
+		src/utils.c src/routine.c
 
 CC = cc
 RM = rm -f
