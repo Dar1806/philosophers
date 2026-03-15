@@ -6,7 +6,7 @@
 /*   By: nmeunier <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/10 16:17:38 by nmeunier          #+#    #+#             */
-/*   Updated: 2026/03/13 18:58:17 by nmeunier         ###   ########.fr       */
+/*   Updated: 2026/03/14 22:40:29 by nmeunier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,6 +45,7 @@ int	init_mutex(t_data *data)
 	if (!data->fork)
 		return (0);
 	pthread_mutex_init(&data->mstop, NULL);
+	pthread_mutex_init(&data->mlast_meal, NULL);
 	while (++i < data->number_of_philosophers)
 		if (pthread_mutex_init(&(data->fork)[i], NULL))
 			return (0);
@@ -71,9 +72,6 @@ int	init_philo(t_data *data, t_philo **philo)
 		(*philo)[i].left_fork = &data->fork[i];
 		(*philo)[i].right_fork = &data->fork[(i + 1)
 			% data->number_of_philosophers];
-		(*philo)[i].thread = malloc(sizeof(pthread_t));
-		if (!(*philo)[i].thread)
-			return (0);
 	}
 	return (1);
 }

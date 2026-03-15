@@ -6,7 +6,7 @@
 /*   By: nmeunier <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/10 12:24:50 by nmeunier          #+#    #+#             */
-/*   Updated: 2026/03/13 18:58:35 by nmeunier         ###   ########.fr       */
+/*   Updated: 2026/03/14 22:58:09 by nmeunier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,12 +30,13 @@ typedef struct s_data
 	int				stop;
 	pthread_mutex_t	*fork;
 	pthread_mutex_t	mstop;
+	pthread_mutex_t	mlast_meal;
 }					t_data;
 
 typedef struct s_philo
 {
 	pthread_mutex_t		*right_fork;
-	pthread_t			*thread;
+	pthread_t			thread;
 	int					meal_eaten;
 	pthread_mutex_t		*left_fork;
 	long				last_meal;
@@ -43,14 +44,19 @@ typedef struct s_philo
 	t_data				*data;
 }					t_philo;
 
-void	free_all(t_data *data, t_philo *philo);
-int		init_mutex(t_data *data);
 int		init_data(int ac, char **av, t_data **data);
+int		check(t_philo *philo, t_data *data, int i);
 int		init_philo(t_data *data, t_philo **philo);
-void	ft_usleep(t_data data, int time);
-int		is_dead(t_philo *philo);
+void	free_all(t_data *data, t_philo *philo);
+void	ft_usleep(t_data *data, int time);
+int		init_mutex(t_data *data);
+void	sleeping(t_philo *philo);
+void	eating(t_philo *philo);
+int		arrete(t_philo *philo);
 int		is_number(char	*str);
+void	*is_dead(void *arg);
 void	*routine(void *arg);
+void	stop(t_data *data);
 long	get_time(void);
 
 #endif
