@@ -45,9 +45,3 @@ Example:
 - [Threads Documentation](https://www.geeksforgeeks.org/c/multithreading-in-c/)
 
 - 42 School Subject PDF
-
-## Use of AI
-
-AI tools were used for:
-- Assisting with code review and debugging
-- Providing explanations and documentation for concurrency concepts (threads and mutexes)
