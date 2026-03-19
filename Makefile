@@ -6,7 +6,7 @@
 #    By: nmeunier <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2026/02/05 11:19:10 by nmeunier          #+#    #+#              #
-#    Updated: 2026/03/19 10:40:10 by nmeunier         ###   ########.fr        #
+#    Updated: 2026/03/19 10:40:36 by nmeunier         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -18,7 +18,7 @@ SRCS = $(LIBFT) src/main.c src/init.c src/time.c src/free.c \
 CC = cc
 RM = rm -f
 CFLAGS = -Wall -Wextra -Werror -g
-a
+
 NAME = philo
 OBJS = $(SRCS:.c=.o)
 

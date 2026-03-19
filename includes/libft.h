@@ -6,7 +6,7 @@
 /*   By: nmeunier <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/06 11:26:13 by nmeunier          #+#    #+#             */
-/*   Updated: 2026/03/19 10:39:42 by nmeunier         ###   ########.fr       */
+/*   Updated: 2026/03/19 10:40:43 by nmeunier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,5 +21,5 @@
 
 int		ft_atoi(const char *str);
 void	ft_putstr_fd(char *s, int fd);
-a
+
 #endif
