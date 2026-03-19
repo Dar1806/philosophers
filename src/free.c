@@ -6,7 +6,7 @@
 /*   By: nmeunier <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/12 17:18:30 by nmeunier          #+#    #+#             */
-/*   Updated: 2026/03/19 09:02:44 by nmeunier         ###   ########.fr       */
+/*   Updated: 2026/03/19 10:41:24 by nmeunier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,3 +32,4 @@ void	free_all(t_data *data, t_philo *philo)
 		free(data);
 	}
 }
+a
