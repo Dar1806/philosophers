@@ -40,3 +40,7 @@ Example:
 
 - [Dining Philosophers Problem](https://en.wikipedia.org/wiki/Dining_philosophers_problem)
 - 42 School Subject PDF
+
+- [Mutex documentation](https://medium.com/@sherniiazov.da/mutexes-in-c-ac2b0f1a6d34)
+
+- [Thread documentation](https://www.geeksforgeeks.org/c/multithreading-in-c/)
