@@ -6,7 +6,7 @@
 /*   By: nmeunier <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/13 11:32:32 by nmeunier          #+#    #+#             */
-/*   Updated: 2026/03/14 23:09:40 by nmeunier         ###   ########.fr       */
+/*   Updated: 2026/03/19 09:41:51 by nmeunier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,10 +49,10 @@ int	check(t_philo *philo, t_data *data, int i)
 	pthread_mutex_lock(&data->mlast_meal);
 	if (get_time() - philo[i].last_meal > data->time_to_die)
 	{
+		stop(data);
 		pthread_mutex_unlock(&data->mlast_meal);
 		printf("%ld %d died\n", get_time()
 			- data->start, philo[i].id_philo + 1);
-		stop(data);
 		return (1);
 	}
 	if (data->number_of_meal != -1

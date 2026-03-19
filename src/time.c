@@ -6,7 +6,7 @@
 /*   By: nmeunier <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/10 17:00:00 by nmeunier          #+#    #+#             */
-/*   Updated: 2026/03/14 18:51:34 by nmeunier         ###   ########.fr       */
+/*   Updated: 2026/03/19 08:55:36 by nmeunier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,16 @@ void	ft_usleep(t_data *data, int time)
 	long	max;
 
 	max = get_time() + time;
-	while (get_time() < max && !data->stop)
+	while (get_time() < max)
+	{
+		pthread_mutex_lock(&data->mstop);
+		if (data->stop)
+		{
+			pthread_mutex_unlock(&data->mstop);
+			break ;
+		}
+		pthread_mutex_unlock(&data->mstop);
 		if (usleep(200) == -1)
 			break ;
+	}
 }

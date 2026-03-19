@@ -6,7 +6,7 @@
 /*   By: nmeunier <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/12 17:18:30 by nmeunier          #+#    #+#             */
-/*   Updated: 2026/03/14 18:31:59 by nmeunier         ###   ########.fr       */
+/*   Updated: 2026/03/19 09:02:44 by nmeunier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ void	free_all(t_data *data, t_philo *philo)
 {
 	int	i;
 
-	i = -1;	
+	i = -1;
 	if (data && data->fork)
 	{
 		while (++i < data->number_of_philosophers)
@@ -26,5 +26,9 @@ void	free_all(t_data *data, t_philo *philo)
 	if (philo)
 		free(philo);
 	if (data)
+	{
+		pthread_mutex_destroy(&data->mstop);
+		pthread_mutex_destroy(&data->mlast_meal);
 		free(data);
+	}
 }

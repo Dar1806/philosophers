@@ -6,7 +6,7 @@
 /*   By: nmeunier <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/10 16:17:38 by nmeunier          #+#    #+#             */
-/*   Updated: 2026/03/14 22:40:29 by nmeunier         ###   ########.fr       */
+/*   Updated: 2026/03/19 08:58:43 by nmeunier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,10 +59,7 @@ int	init_philo(t_data *data, t_philo **philo)
 	i = -1;
 	*philo = malloc(sizeof(t_philo) * data->number_of_philosophers);
 	if (!*philo)
-	{
-		free(*philo);
 		return (0);
-	}
 	while (++i < data->number_of_philosophers)
 	{
 		(*philo)[i].data = data;
