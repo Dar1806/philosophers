@@ -39,8 +39,15 @@ Example:
 # Resources
 
 - [Dining Philosophers Problem](https://en.wikipedia.org/wiki/Dining_philosophers_problem)
+
+- [Mutexes Documentation](https://medium.com/@sherniiazov.da/mutexes-in-c-ac2b0f1a6d34)
+
+- [Threads Documentation](https://www.geeksforgeeks.org/c/multithreading-in-c/)
+
 - 42 School Subject PDF
 
-- [Mutex documentation](https://medium.com/@sherniiazov.da/mutexes-in-c-ac2b0f1a6d34)
+## Use of AI
 
-- [Thread documentation](https://www.geeksforgeeks.org/c/multithreading-in-c/)
+AI tools were used for:
+- Assisting with code review and debugging
+- Providing explanations and documentation for concurrency concepts (threads and mutexes)
