@@ -6,7 +6,7 @@
 /*   By: nmeunier <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/13 11:40:30 by nmeunier          #+#    #+#             */
-/*   Updated: 2026/03/19 10:01:28 by nmeunier         ###   ########.fr       */
+/*   Updated: 2026/03/19 10:02:20 by nmeunier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,7 +64,7 @@ void	thinking(t_philo *philo)
 	if (arrete(philo))
 		return ;
 	printf("%ld %d is thinking\n", get_time() - philo->data->start,
-		philo->id_philo + 1);
+		philo->id_philo + 1); 
 }
 
 void	*routine(void *arg)
