@@ -6,7 +6,7 @@
 /*   By: nmeunier <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/10 16:17:38 by nmeunier          #+#    #+#             */
-/*   Updated: 2026/03/23 17:49:05 by nmeunier         ###   ########.fr       */
+/*   Updated: 2026/03/24 10:07:59 by nmeunier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,8 +47,7 @@ int	init_mutex(t_data *data)
 	pthread_mutex_init(&data->mstop, NULL);
 	pthread_mutex_init(&data->mprint, NULL);
 	while (++i < data->number_of_philosophers)
-		if (pthread_mutex_init(&(data->fork)[i], NULL))
-			return (0);
+		pthread_mutex_init(&(data->fork)[i], NULL);
 	return (1);
 }
 

@@ -6,7 +6,7 @@
 /*   By: nmeunier <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/10 16:14:30 by nmeunier          #+#    #+#             */
-/*   Updated: 2026/03/24 09:42:42 by nmeunier         ###   ########.fr       */
+/*   Updated: 2026/03/24 10:11:22 by nmeunier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,6 +36,8 @@ int	main(int ac, char **av)
 	pthread_t		monitor;
 	int				i;
 
+	data = NULL;
+	philo = NULL;
 	if (ac != 6 && ac != 5)
 		return (0);
 	i = 0;
@@ -43,10 +45,11 @@ int	main(int ac, char **av)
 		if (!is_number(av[i]))
 			return (0);
 	if (!init_data(ac, av, &data) || !init_mutex(data)
-		|| !init_philo(data, &philo))
+		|| !init_philo(data, &philo) || !start(data, philo, &monitor))
+	{
+		free_all(data, philo);
 		return (0);
-	if (!start(data, philo, &monitor))
-		return (0);
+	}
 	i = -1;
 	while (++i < data->number_of_philosophers)
 		pthread_join(philo[i].thread, NULL);

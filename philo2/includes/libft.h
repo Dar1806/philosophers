@@ -6,7 +6,7 @@
 /*   By: nmeunier <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/06 11:26:13 by nmeunier          #+#    #+#             */
-/*   Updated: 2026/03/19 10:41:44 by nmeunier         ###   ########.fr       */
+/*   Updated: 2026/03/24 09:58:47 by nmeunier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,5 @@
 # include <string.h>
 
 int		ft_atoi(const char *str);
-void	ft_putstr_fd(char *s, int fd);
 
 #endif
