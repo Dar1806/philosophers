@@ -6,7 +6,7 @@
 /*   By: nmeunier <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/10 16:14:30 by nmeunier          #+#    #+#             */
-/*   Updated: 2026/03/23 16:40:43 by nmeunier         ###   ########.fr       */
+/*   Updated: 2026/03/24 09:42:42 by nmeunier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,10 +17,12 @@ int	start(t_data *data, t_philo *philo, pthread_t *monitor)
 	int	i;
 
 	i = -1;
+	data->start = get_time();
 	while (++i < data->number_of_philosophers)
 	{
 		if (pthread_create(&philo[i].thread, NULL, routine, &philo[i]))
 			return (0);
+		ft_usleep(data, 1);
 	}
 	if (pthread_create(monitor, NULL, is_dead, philo))
 		return (0);

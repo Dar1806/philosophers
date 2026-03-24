@@ -6,7 +6,7 @@
 /*   By: nmeunier <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/10 12:24:50 by nmeunier          #+#    #+#             */
-/*   Updated: 2026/03/23 17:49:02 by nmeunier         ###   ########.fr       */
+/*   Updated: 2026/03/24 09:12:40 by nmeunier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,6 @@ typedef struct s_data
 	int				number_of_philosophers;
 	int				number_of_meal;
 	int				time_to_sleep;
-	int				*philosophers;
 	int				time_to_die;
 	int				time_to_eat;
 	long			start;

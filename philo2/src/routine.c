@@ -6,26 +6,14 @@
 /*   By: nmeunier <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/13 11:40:30 by nmeunier          #+#    #+#             */
-/*   Updated: 2026/03/23 23:25:50 by nmeunier         ###   ########.fr       */
+/*   Updated: 2026/03/24 09:47:15 by nmeunier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/philo.h"
 
-int	arrete(t_philo *philo)
+static void	take_forks(t_philo *philo)
 {
-	int	stopped;
-
-	pthread_mutex_lock(&philo->data->mstop);
-	stopped = philo->data->stop;
-	pthread_mutex_unlock(&philo->data->mstop);
-	return (stopped);
-}
-
-void	eating(t_philo *philo)
-{
-	if (arrete(philo))
-		return ;
 	if (philo->left_fork < philo->right_fork)
 	{
 		pthread_mutex_lock(philo->left_fork);
@@ -40,6 +28,13 @@ void	eating(t_philo *philo)
 		pthread_mutex_lock(philo->left_fork);
 		print_status(philo, "has taken a fork");
 	}
+}
+
+void	eating(t_philo *philo)
+{
+	if (arrete(philo))
+		return ;
+	take_forks(philo);
 	pthread_mutex_lock(&philo->mlast_meal);
 	philo->last_meal = get_time();
 	philo->meal_eaten++;
@@ -60,16 +55,9 @@ void	sleeping(t_philo *philo)
 
 void	thinking(t_philo *philo)
 {
-	long	think_time;
-
 	if (arrete(philo))
 		return ;
 	print_status(philo, "is thinking");
-	if (philo->data->number_of_philosophers % 2 == 0)
-		think_time = 0;
-	else
-		think_time = philo->data->time_to_eat;
-	ft_usleep(philo->data, think_time);
 }
 
 void	*routine(void *arg)
