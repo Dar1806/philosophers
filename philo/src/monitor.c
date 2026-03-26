@@ -6,7 +6,7 @@
 /*   By: nmeunier <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/13 11:32:32 by nmeunier          #+#    #+#             */
-/*   Updated: 2026/03/23 22:33:33 by nmeunier         ###   ########.fr       */
+/*   Updated: 2026/03/26 20:27:33 by nmeunier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -89,6 +89,6 @@ void	*is_dead(void *arg)
 		while (++i < philo->data->number_of_philosophers)
 			if (check(philo, data, i))
 				return (NULL);
-		usleep(200);
+		usleep(500);
 	}
 }

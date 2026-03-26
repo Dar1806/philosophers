@@ -6,7 +6,7 @@
 /*   By: nmeunier <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/10 16:17:38 by nmeunier          #+#    #+#             */
-/*   Updated: 2026/03/24 10:07:59 by nmeunier         ###   ########.fr       */
+/*   Updated: 2026/03/26 20:10:21 by nmeunier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,7 +63,6 @@ int	init_philo(t_data *data, t_philo **philo)
 	{
 		(*philo)[i].data = data;
 		(*philo)[i].meal_eaten = 0;
-		(*philo)[i].last_meal = data->start;
 		(*philo)[i].id_philo = i;
 		(*philo)[i].left_fork = &data->fork[i];
 		(*philo)[i].right_fork = &data->fork[(i + 1)

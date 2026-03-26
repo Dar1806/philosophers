@@ -6,7 +6,7 @@
 /*   By: nmeunier <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/13 11:40:30 by nmeunier          #+#    #+#             */
-/*   Updated: 2026/03/24 09:47:15 by nmeunier         ###   ########.fr       */
+/*   Updated: 2026/03/26 21:02:22 by nmeunier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,9 +55,17 @@ void	sleeping(t_philo *philo)
 
 void	thinking(t_philo *philo)
 {
+	long	think;
+
 	if (arrete(philo))
 		return ;
 	print_status(philo, "is thinking");
+	if (philo->data->number_of_philosophers % 2 != 0)
+	{
+		think = philo->data->time_to_eat * 2 - philo->data->time_to_sleep;
+		if (think > 0)
+			ft_usleep(philo->data, think);
+	}
 }
 
 void	*routine(void *arg)
@@ -72,19 +80,15 @@ void	*routine(void *arg)
 		stop(philo->data);
 		return (NULL);
 	}
-	if (philo->id_philo % 2 != 0)
+	if (philo->id_philo % 2 != 0
+		|| (philo->data->number_of_philosophers % 2 != 0
+			&& philo->id_philo == philo->data->number_of_philosophers - 1))
 		ft_usleep(philo->data, philo->data->time_to_eat);
 	while (!arrete(philo))
 	{
 		eating(philo);
-		if (arrete(philo))
-			break ;
 		sleeping(philo);
-		if (arrete(philo))
-			break ;
 		thinking(philo);
-		if (arrete(philo))
-			break ;
 	}
 	return (NULL);
 }

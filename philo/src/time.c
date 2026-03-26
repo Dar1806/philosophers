@@ -6,7 +6,7 @@
 /*   By: nmeunier <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/10 17:00:00 by nmeunier          #+#    #+#             */
-/*   Updated: 2026/03/24 09:37:08 by nmeunier         ###   ########.fr       */
+/*   Updated: 2026/03/26 20:17:32 by nmeunier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,5 +29,5 @@ void	ft_usleep(t_data *data, long time)
 
 	start = get_time();
 	while (!data->stop && (get_time() - start) < time)
-		usleep(time / 10);
+		usleep(500);
 }
