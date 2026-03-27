@@ -6,7 +6,7 @@
 /*   By: nmeunier <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/10 17:00:00 by nmeunier          #+#    #+#             */
-/*   Updated: 2026/03/26 20:17:32 by nmeunier         ###   ########.fr       */
+/*   Updated: 2026/03/27 19:09:28 by nmeunier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,8 +26,16 @@ long	get_time(void)
 void	ft_usleep(t_data *data, long time)
 {
 	long	start;
+	int		stop;
 
 	start = get_time();
-	while (!data->stop && (get_time() - start) < time)
+	while (1)
+	{
+		pthread_mutex_lock(&data->mstop);
+		stop = data->stop;
+		pthread_mutex_unlock(&data->mstop);
+		if (stop || (get_time() - start) >= time)
+			break ;
 		usleep(500);
+	}
 }

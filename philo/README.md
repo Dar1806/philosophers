@@ -5,9 +5,6 @@
 This project is a solution to the classic "Dining Philosophers" problem, implemented as part of the 42 school curriculum. The goal is to simulate the behavior of philosophers who alternately think, eat, and sleep, while sharing forks and avoiding deadlocks and starvation. The project demonstrates concepts in concurrent programming, synchronization, and resource sharing using threads and mutexes in C.
 
 # Instructions
-
-## Compilation
-
 To compile the project, run the following command in the root directory:
 
 ```
