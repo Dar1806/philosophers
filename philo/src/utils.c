@@ -6,7 +6,7 @@
 /*   By: nmeunier <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/23 09:43:39 by nmeunier          #+#    #+#             */
-/*   Updated: 2026/03/30 18:13:04 by nmeunier         ###   ########.fr       */
+/*   Updated: 2026/03/30 20:20:49 by nmeunier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,4 +55,17 @@ int	ft_atoi(const char *str)
 		i++;
 	}
 	return (sign * nbr);
+}
+
+void	*ft_memset(void *s, int c, size_t n)
+{
+	size_t	i;
+
+	i = 0;
+	while (i < n)
+	{
+		((char *)s)[i] = c;
+		i++;
+	}
+	return (s);
 }

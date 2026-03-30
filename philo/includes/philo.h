@@ -6,7 +6,7 @@
 /*   By: nmeunier <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/10 12:24:50 by nmeunier          #+#    #+#             */
-/*   Updated: 2026/03/30 18:15:33 by nmeunier         ###   ########.fr       */
+/*   Updated: 2026/03/30 20:20:52 by nmeunier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,6 +53,7 @@ int		check(t_philo *philo, t_data *data, int i);
 int		init_philo(t_data *data, t_philo **philo);
 void	print_status(t_philo *philo, char *msg);
 void	free_all(t_data *data, t_philo *philo);
+void	*ft_memset(void *s, int c, size_t n);
 void	ft_usleep(t_data *data, long time);
 int		init_mutex(t_data *data);
 void	sleeping(t_philo *philo);

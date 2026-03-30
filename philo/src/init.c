@@ -6,7 +6,7 @@
 /*   By: nmeunier <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/10 16:17:38 by nmeunier          #+#    #+#             */
-/*   Updated: 2026/03/26 20:10:21 by nmeunier         ###   ########.fr       */
+/*   Updated: 2026/03/30 20:20:30 by nmeunier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,13 +17,11 @@ int	init_data(int ac, char **av, t_data **data)
 	*data = malloc(sizeof(t_data));
 	if (!*data)
 		return (0);
+	ft_memset(*data, 0, sizeof(t_data));
 	(*data)->number_of_philosophers = ft_atoi(av[1]);
 	if ((*data)->number_of_philosophers > 200
 		|| (*data)->number_of_philosophers < 1)
-	{
-		free(*data);
 		return (0);
-	}
 	(*data)->start = get_time();
 	(*data)->time_to_die = ft_atoi(av[2]);
 	(*data)->time_to_eat = ft_atoi(av[3]);
@@ -33,6 +31,8 @@ int	init_data(int ac, char **av, t_data **data)
 		(*data)->number_of_meal = ft_atoi(av[5]);
 	else
 		(*data)->number_of_meal = -1;
+	if ((*data)->number_of_meal == 0)
+		return (0);
 	return (1);
 }
 
