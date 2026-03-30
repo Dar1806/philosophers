@@ -6,7 +6,7 @@
 /*   By: nmeunier <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/10 12:24:50 by nmeunier          #+#    #+#             */
-/*   Updated: 2026/03/24 09:12:40 by nmeunier         ###   ########.fr       */
+/*   Updated: 2026/03/30 18:15:33 by nmeunier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,11 @@
 
 # define PHILO_H
 
-# include "libft.h"
+# include <unistd.h>
+# include <stdio.h>
+# include <stdlib.h>
+# include <stddef.h>
+# include <string.h>
 # include <pthread.h>
 # include <sys/time.h>
 
@@ -52,6 +56,7 @@ void	free_all(t_data *data, t_philo *philo);
 void	ft_usleep(t_data *data, long time);
 int		init_mutex(t_data *data);
 void	sleeping(t_philo *philo);
+int		ft_atoi(const char *str);
 void	eating(t_philo *philo);
 int		arrete(t_philo *philo);
 int		is_number(char	*str);

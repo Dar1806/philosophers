@@ -6,13 +6,11 @@
 #    By: nmeunier <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2026/02/05 11:19:10 by nmeunier          #+#    #+#              #
-#    Updated: 2026/03/24 09:58:42 by nmeunier         ###   ########.fr        #
+#    Updated: 2026/03/30 18:13:42 by nmeunier         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-LIBFT	= libft/ft_atoi.c
-
-SRCS = $(LIBFT) src/main.c src/init.c src/time.c src/free.c \
+SRCS =  src/main.c src/init.c src/time.c src/free.c \
 		src/utils.c src/routine.c src/monitor.c
 
 CC = cc
