@@ -6,7 +6,7 @@
 /*   By: nmeunier <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/10 16:14:30 by nmeunier          #+#    #+#             */
-/*   Updated: 2026/03/26 20:10:39 by nmeunier         ###   ########.fr       */
+/*   Updated: 2026/04/01 14:32:31 by nmeunier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,12 +43,12 @@ int	main(int ac, char **av)
 	i = 0;
 	while (av[++i])
 		if (!is_number(av[i]))
-			return (0);
+			return (printf("Only numbers\n"), 0);
 	if (!init_data(ac, av, &data) || !init_mutex(data)
 		|| !init_philo(data, &philo) || !start(data, philo, &monitor))
 	{
 		free_all(data, philo);
-		return (0);
+		return (printf("Error while initializing the data\n"), 0);
 	}
 	i = -1;
 	while (++i < data->number_of_philosophers)

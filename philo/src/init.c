@@ -6,7 +6,7 @@
 /*   By: nmeunier <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/10 16:17:38 by nmeunier          #+#    #+#             */
-/*   Updated: 2026/03/30 20:20:30 by nmeunier         ###   ########.fr       */
+/*   Updated: 2026/04/01 14:41:07 by nmeunier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,9 @@ int	init_data(int ac, char **av, t_data **data)
 	(*data)->time_to_die = ft_atoi(av[2]);
 	(*data)->time_to_eat = ft_atoi(av[3]);
 	(*data)->time_to_sleep = ft_atoi(av[4]);
+	if ((*data)->time_to_die <= 70
+		|| (*data)->time_to_sleep <= 70 || (*data)->time_to_eat <= 70)
+		return (0);
 	(*data)->stop = 0;
 	if (ac == 6)
 		(*data)->number_of_meal = ft_atoi(av[5]);
